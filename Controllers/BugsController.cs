@@ -7,9 +7,9 @@ public class BugsController : HomeController
         var bugs = new List<Bug>
         {
             new Bug {id = 1, Severity = Severity.Low, IsOpen = true, Owner = "Alice"}
-            new Bug {id = 2, Severity = Severity.Medium, IsOpen = false, Owner = "Alice"}
-            new Bug {id = 3, Severity = Severity.High, IsOpen = true, Owner = "Alice"}
-            new Bug {id = 4, Severity = Severity.Critial, IsOpen = false, Owner = "Alice"}
+            new Bug {id = 2, Severity = Severity.Medium, IsOpen = false, Owner = "Alex"}
+            new Bug {id = 3, Severity = Severity.High, IsOpen = true, Owner = "Jessica"}
+            new Bug {id = 4, Severity = Severity.Critial, IsOpen = false, Owner = "Ryan"}
             new Bug {id = 5, Severity = Severity.Low, IsOpen = true, Owner = null}
         }
 
