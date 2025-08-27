@@ -1,0 +1,38 @@
+@model List<Bug>
+@{
+    var bugText = (int)(ViewData["BugCount"] ?? 0) > 0 ? "text-danger" : "text-success";
+}
+
+<div class="container">
+    <h1>@ViewData["Title"]</h1>
+    <p>@ViewBag.Subtitle</p>
+    <p class="@bugText">@ViewData["BugCount"] open bugs</p>
+    @foreach (var bug in Model)
+    {
+        var border = "";
+        @if (bug.Severity is Severity.High or Severity.Critical)
+        {
+            border = "border border-danger";
+        }
+        <div class="card @border">
+            <div class="card-header">
+                <h2>@bug.Title</h2>
+            </div>
+            <div class="card-body">
+                <h3>@bug.Severity</h3>
+                <h3>@bug.Owner</h3>
+                <h3>@bug.CreatedAt</h3>
+                <div>
+                    @if (bug.IsOpen)
+                    {
+                        <span class="badge text-bg-warning">OPEN</span>
+                    }
+                    else
+                    {
+                        <span class="badge text-bg-success">FIXED</span>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>
